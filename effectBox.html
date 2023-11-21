@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 원예진 - effectBox </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #ddd;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        figure.box {
+            position: relative;
+            top: 150px;
+            margin: 0 auto;
+            width: 480px;
+            height: 292px;
+            cursor: pointer;
+            /* 마우스 올렸을때 손가락 나오게 함 */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+            /* x좌표, y좌표, 흐림효과, 색, 투명도 */
+        }
+
+        figure.box img {
+            width: 100%;
+            opacity: 0.7;
+            /* 70% 투명도 */
+        }
+
+        figure.box:hover img {
+            opacity: 1;
+        }
+
+        /* 100% 투명도 */
+
+        /* text */
+
+        figure.box figcaption {
+            position: absolute;
+            bottom: 70px;
+            left: 30px;
+            color: #fff;
+        }
+
+        figure.box figcaption h1 {
+            font-weight: 300; /* 서체 굵기 - 수치가 작을수록 얇다 */
+            transition: .2s;
+            box-sizing:border-box ;
+            margin-bottom: 10px;
+        }
+
+        figure.box figcaption h1 span {
+            font-weight: 800;
+        }
+
+        figure.box figcaption p {
+            font-size: 13px;
+            opacity: 0;
+            transition: .2s;
+
+        }
+        figure.box:hover p {
+            opacity: 1;
+        }
+        figure.box h1,
+        figure.box p {transform: translate(0,40px);} /* x, y */
+
+        figure.box p a {color: #fff;}
+
+        /* hover */
+
+        figure.box:hover img,
+        figure.box:hover h1,
+        figure.box:hover p {
+            transform: translate(0,0);
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <!-- figure.box>img+figcaption>div>h1>span -->
+    <figure class="box">
+        <!-- bg img -->
+        <img src="./images/1.jpg" alt="모바일이미지">
+        <!-- text -->
+        <figcaption>
+            <div>
+                <h1> EZEN <span>EVENT</span></h1>
+                <p><a href="https://swig.ezenac.co.kr/">
+                        이젠을 친구 추가하면 <br>
+                        온라인 쿠폰이 쏘옥~!
+                    </a></p>
+            </div>
+        </figcaption>
+    </figure>
+</body>
+
+</html>
